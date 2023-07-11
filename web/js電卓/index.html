@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>電卓</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div id="webcalc">
+            <div>MY Webcalc</div>
+            <input /><br>
+            <script>
+                function update(_v) {
+                    document.querySelector('input').value = _v
+                }
+
+                function append(_v) {
+                    document.querySelector('input').value += _v
+                }
+                function calc() {
+                    const v = document.querySelector('input').value
+                    try {
+                        const f = new Function('return ' + v)
+                        update(f().toString())
+                    } catch (_error) {
+                        update(_error)
+                    }
+                }
+            </script>
+            <button onclick="append( '1' )">1</button>
+            <button onclick="append( '2' )">2</button>
+            <button onclick="append( '3' )">3</button>
+            <button onclick="append( '4' )">4</button>
+            <button onclick="append( '5' )">5</button>
+            <button onclick="append( '6' )">6</button>
+            <button onclick="append( '7' )">7</button>
+            <button onclick="append( '8' )">8</button>
+            <button onclick="append( '9' )">9</button>
+            <button onclick="append( '0' )">0</button>
+            <button onclick="append( '.' )">.</button>
+            <button onclick="append( '+' )">+</button>
+            <button onclick="append( '-' )">-</button>
+            <button onclick="append( '*' )">*</button>
+            <button onclick="append( '/' )">/</button>
+            <button onclick="append( '**' )">^</button>
+            <button onclick="append( '**0.5' )">√</button>
+
+
+            <button class="Calc" onclick="calc()">=</button>
+
+            <button onclick="document.querySelector( 'input' ).value = '' ">CLR</button>
+        </div>
+
+    </main>
+</body>
+
+</html>

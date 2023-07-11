@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* body */
+/* main */
+.main {
+    
+}
+#js-question {
+    font-size: 3rem;
+    color: azure;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+    text-align: center;
+    margin: 3rem auto;
+}
+div {
+    display: flex;
+    justify-content: center;
+}
+button {
+    font-size: 2.5rem;
+    color: azure;
+    background-color: blue;
+    border-radius: 5px;
+    margin-left: 2rem;
+}
+/* footer */
