@@ -1,0 +1,123 @@
+@charset "utf-8"
+
+html {font-size: 100%;}
+
+/* head */
+
+
+/* body */
+body {
+    color: black;
+    font-size: 0.9rem;
+    text-align: center;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 4%;
+    align-items: center;
+    padding: 10px 0;
+   
+}
+
+/* header */
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    height: 60px;
+}
+
+.logo {
+    width: 120px;
+    padding: 10px 0;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+    /* font-size: ; */
+    padding: 10px 0;
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+
+/* main */
+
+section {
+    padding-bottom: 40px;
+}
+
+.main-visual {
+    width: 100%;
+    max-width: 1920px;
+    height: 600px;
+    object-fit: cover;
+
+}
+
+/* section About */
+
+.about {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 30px;
+
+}
+
+.about-li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-decoration: underline #000000 1px;
+}
+
+.about-text  {
+    text-align: left;
+}
+
+/* section Bicycle */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 6%;
+    margin-bottom: 50px;
+}
+
+.item {
+    padding: 10px;
+}
+
+
+@media (max-width:600px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        
+        
+    }
+    }

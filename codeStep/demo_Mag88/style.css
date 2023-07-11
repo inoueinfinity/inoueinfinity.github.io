@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* body */
+body {
+    font-size: 0.8rem;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+/* header */
+.mainImg {
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+.logoImg {
+    text-align: end;
+    position: relative;
+    top: 30px;
+    right: 30px;
+}
+/* main */
+main {
+    padding-top: 100vh;
+}
+#magazine {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+#magazine div {
+    display: flex;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+#magazine img {
+    width: 95%;
+    height: auto;
+}
+.aImg {
+    position: relative;
+}
+.mag-p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.5);
+    padding: 1rem 2rem;
+}
+/* fashion */
+#fashion {
+    position: relative;
+    text-align: center;
+}
+#fashion img {
+    width: 100vw;
+    background-size: cover;
+}
+#fashion div {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#fashion a {
+    padding: 10px 30px;
+    border: 1px solid black;
+}
+.catalog, .catalog-antique {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+
+}
+.catalog div, .catalog-antique div {
+    display: flex;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.catalog img, .catalog-antique img {
+    width: 95%;
+    height: auto;
+}
+footer {
+    background-color: darkgrey;
+}
+.text {
+    flex-direction: column;
+}
+footer div {
+    display: flex;
+    width: 60%;
+    height: 400px;
+    justify-content: center;
+    margin: 0 auto;
+}
+footer img {
+    width: 120px;
+}
+.ft-text {
+    flex-direction: column;
+}
+footer p{
+    text-align: center;
+    padding-top: 15px;
+    background-color: white;
+    height: 30px;
+    color: pink;
+}
+/* sp */
+@media (max-width: 896px) {   
+    #magazine {
+        width: 80%;
+    }
+    #magazine div {
+        flex-direction: column;
+    }
+    .mag-p {
+        width: 60%;
+    }
+    #fashion img {
+        min-height: 400px;
+    }
+    .catalog, .catalog-antique {
+        width: 80%;
+    } 
+    .catalog div, .catalog-antique div {
+        flex-direction: column;
+    }
+    footer div {
+        flex-direction: column;
+        width: 80%;
+    }
+}

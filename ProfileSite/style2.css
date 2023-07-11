@@ -1,0 +1,562 @@
+@charset "utf-8";
+/* 共通 */
+body {
+    margin: 0 auto;
+}
+li {
+    list-style: none;
+}
+a, p, dt, dd, h3 {
+    text-decoration: none;
+    color: white;
+}
+p, dt, dd {
+    font-size: 20px;
+}
+dt {
+    float: left;
+}
+#name, #job, #study, #site {
+    padding: 15px 10px 60px 10px;
+}
+
+/* header */
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 999;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+.header h1 {
+    width: 150px;
+    text-align: center;
+    color: white;
+    background-color: darkgrey;
+    margin-left: 10px;
+}
+.header button {
+    width: 45px;
+    height: 45px;
+    background-color: darkgrey;
+    border-color: darkgrey;
+    position: fixed;
+    right: 10px;
+    z-index: 999;
+}
+.header span {
+    display: block;
+    border: 2px solid white;
+    width: 100%;
+    transition: ease .4s;
+/* ハンバーガーメニューのスパンをボタンの真ん中に寄せるため */
+    position: relative;
+    left: -2px;
+}
+.header span:nth-child(1){
+    top: 0;
+}
+.header span:nth-child(2){
+    margin: 5px 0;
+}
+.header span:nth-child(3){
+    bottom: 0;
+}
+#nav {
+    display: none;
+}
+/* ヘッダーのオープン時css */
+#btn-js.open span {
+    transition: ease .4s;
+}
+#btn-js.open span:nth-child(1){
+    top: 1px;
+    rotate: 45deg;
+}
+#btn-js.open span:nth-child(2){
+    display: none;
+}
+#btn-js.open span:nth-child(3){
+    bottom: 1px;
+    rotate: -45deg;
+}
+#nav.open {
+    padding: 20px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+    height: 100vh;
+    line-height: 2rem;
+}
+#nav.open a {
+    font-size: 16px;
+}
+#nav.open ul {
+    padding: 25vh 0;
+}
+#nav.open li:first-child {
+    text-align: center;
+}
+/* リストのテキスト前にアイコン設置 */
+#nav.open a {
+    display: block;
+    width: 100%;
+    /* アイコンのスペースを確保したpadding-leftを設置する */
+    padding: 16px 16px 16px 40px;
+    position: relative;
+    /* 折り返しの対応 */
+    overflow-wrap: break-word;
+}
+#nav.open a::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 16px;
+    /* 調整 */
+    top: 50%;
+    transform: translateY(-50%);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#nav.open a.nameN::before {
+    background-image: url(img/user.svg);
+    filter: invert(100%);
+}
+#nav.open a.jobN::before {
+    background-image: url(img/briefcase.svg);
+    filter: invert(100%);
+}
+#nav.open a.studyN::before {
+    background-image: url(img/edit.svg);
+    filter: invert(100%);
+}
+#nav.open a.siteN::before {
+    background-image: url(img/browse.svg);
+    filter: invert(100%);
+}
+#nav.open a.mailN::before {
+    background-image: url(img/paper-plane.svg);
+    filter: invert(100%);
+}
+
+/* main */
+.wrapper {
+    width: 900px;
+    margin: 50px auto;
+}
+.wrapper-g {
+    background-color: darkgrey;
+}
+main {
+    padding-top: 60px;
+}
+#slide {
+    margin: 50px auto;
+}
+#slide div {
+    width: 100%;
+    height: 70vh;
+    margin: auto;
+}
+#slide img {
+    width: 100%;
+    margin: 0 auto;
+    height: 90%;
+}
+#slide p {
+    text-align: center;
+}
+/* スライドの矢印を枠内に入れるため */
+.slick-prev {
+    left: 0;
+    /* 戻るボタンが反応するようにするため */
+    z-index: 1;
+}
+.slick-next {
+    right: 0;
+    z-index: 1;
+}
+/* id slide ここまで */
+#main {
+    padding: 20px;
+    background-color: darkgrey;
+}
+
+
+/* section(name) */
+
+.kage-w {
+    width: 150px;
+    text-align: center;
+    color: darkgrey;
+    background-color: white;
+
+/* 影をつける */
+    position: relative;
+}
+.kage-w::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: -6px;
+    right: -6px;
+    left: 4px;
+    border: 2px solid white;
+    border-top: transparent;
+    border-left: transparent;
+}
+.kage-g {
+    width: 150px;
+    text-align: center;
+    color: white;
+    background-color: darkgrey;
+
+/* 影をつける */
+    position: relative;
+}
+.kage-g::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: -6px;
+    right: -6px;
+    left: 4px;
+    border: 2px solid darkgrey;
+    border-top: transparent;
+    border-left: transparent;
+}
+#name dl {
+    width: 70%;
+    margin: 0 auto;
+
+    line-height: 5rem;
+    text-align: center;
+}
+#name dt {
+    width: 30%;
+    border-bottom: 1px solid white;
+}
+#name dd {
+    border-bottom: 1px solid white;
+}
+/* ルビのフォントサイズ */
+rt {
+    font-size: 0.5rem;
+}
+
+/* フェードインの動きをつける */
+.fadein-before {
+    /* 透過度の設定。０で表示されなくなる */
+    opacity: 0;
+    /* 要素をひだりに100pxずらして配置させる */
+    transform: translateX(-100px);
+    /* 透過度と表示位置を1秒かけて変化させる */
+    transition: opacity 1s, transform 1s;
+}
+.fadein-after {
+    /* 透過度の設定。非表示から表示にする */
+    opacity: 1;
+    /* 要素を100px左にしてたものを戻す */
+    transform: translate(0);
+}
+
+/* job */
+.job-box {
+    background-color: darkgrey;
+    box-shadow: 8px 8px 4px lightslategray;
+    padding: 20px 80px;
+}
+.job-box h3 {
+    border-bottom: 1px solid white;
+}
+.job-box dd {
+    text-align: right;
+}
+
+/* study */
+#study {
+    background-color: darkgrey;
+    align-items: center;
+}
+#study h3 {
+    font-size: 1rem;
+}
+#study span {
+    font-size: 0.8rem;
+}
+.grid-s {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 30px;
+    justify-content: center;
+}
+.sub {
+    line-height: 3rem;
+    text-decoration: underline;
+}
+.img-g img {
+    width: 100%;
+}
+.img-g a {
+    display: block;
+    float: left;
+    width: 50%;
+    background-color: white;
+    color: darkgrey;
+    border: 2px solid darkgrey;
+    text-align: center;
+}
+.grid-t a {
+    width: 100%;
+}
+.img-g p {
+    display: block;
+    width: 99%;
+    background-color: white;
+    color: darkgrey;
+    border: 2px solid darkgrey;
+    text-align: center;
+}
+.img-m {
+    display: flex;
+    justify-content: space-between;
+}
+/* site */
+#site {
+}
+.site {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: center;
+}
+.site img {
+    width: 100%;
+}
+.video {
+    position: relative;
+    padding: 30px 0 56.25%;
+    overflow: hidden;
+    height: 0;
+}
+.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.site-content {
+    border: 5px double darkgrey;
+    border-radius: 10px;
+}
+/* footer */
+footer {
+    background-color: darkgrey;
+}
+.sns {
+    text-align: center;
+    background-color: white;
+
+}
+.sns img {
+    width: 40px;
+    height: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.footerNav {
+    position: absolute;
+    padding: 10px;
+    width: 90%;
+}
+footer button {
+    width: 45px;
+    height: 45px;
+    background-color: darkgrey;;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position:absolute;
+    top: 5px;
+    left: 53%;
+}
+.footerMenu {
+    visibility: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerMenu div {
+    width: 60px;
+}
+.footerMenu img {
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.footerMenu p {
+    width: 100%;
+    margin-top: 0;
+    line-height: 0.3rem;
+    font-size: 1rem;
+}
+.footitle {
+    visibility: hidden;
+}
+
+/* 1280px以下で下記のcss適応 */
+@media screen and (max-width: 1280px) {
+    .wrapper {
+        width: 75%;
+    }
+    /* header */
+    header {
+        position: initial;
+    }
+    .header button {
+        position: absolute;
+        z-index: initial;
+    }
+    #nav.open {
+        position: fixed;
+        z-index: 2;
+        background-color: #aca7bb;
+        opacity: initial;
+    }
+    #nav.open ul {
+        padding: initial;
+    }
+    /* main */
+    main {
+        padding: 0;
+    }
+    .grid-t {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* footer */
+    .footitle {
+        visibility: initial;
+    }
+}
+
+/* 768px以下で下記のcss適応 */
+@media screen and (max-width: 768px) {
+    p, dt, dd {
+        font-size: 1rem;
+    }
+    dt {
+        float: none;
+    }
+    dd {
+        font-weight: bold;
+    }
+    /* main */
+    .wrapper {
+        margin: 10px auto;
+        width: 70%;
+    }
+    /* main */
+    #slide div {
+        height: 70vh;
+    }
+    /* name */
+    #name dl {
+        line-height: 2rem;
+    }
+    #name dt {
+        border-bottom: none;
+        text-align: left;
+    }
+    #name dd {
+        margin-left: 0px;
+        text-align: right;
+    }
+    /* job */
+    .job-box {
+        padding: 10px;
+        padding-bottom: 30px;
+    }
+    .job-box dt,.job-box dd,.job-box p {
+        font-size: 0.8rem;
+    }
+    .job-box dd {
+        padding-bottom: 1rem;
+    }
+    /* study */
+    .center {
+        display: initial;
+    }
+    .img-g p {
+        font-size: 1rem;
+        margin-top: 0px;
+    }
+    .img-m {
+        flex-direction: column;
+        
+    }
+    .img-g a {
+        font-size: 0.9rem;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .slick-prev:before, .slick-next:before {
+        color: black;
+    }
+    /* site */
+    .site {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    /* footer */
+    .sns img {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .footerNav {
+        display: none;
+
+    .footitle{
+        padding-bottom: 100px;
+    }
+    .footitle h1 {
+    width: 150px;
+    text-align: center;
+    color: darkgrey;
+    background-color: white;
+    margin-left: 10px;
+    }
+
+    .footerMenu {
+        visibility: initial;
+        background-color: darkgrey;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 999;
+    }
+    .footerMenu img {
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        filter: invert(100%);
+    }
+}
+}
