@@ -187,12 +187,12 @@ main {
 }
 /* スライドの矢印を枠内に入れるため */
 .slick-prev {
-    left: 0;
+    left: 2;
     /* 戻るボタンが反応するようにするため */
     z-index: 1;
 }
 .slick-next {
-    right: 0;
+    right: 2;
     z-index: 1;
 }
 /* id slide ここまで */
