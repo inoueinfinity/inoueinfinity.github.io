@@ -187,12 +187,12 @@ main {
 }
 /* スライドの矢印を枠内に入れるため */
 .slick-prev {
-    left: 2;
+    left: 1%;
     /* 戻るボタンが反応するようにするため */
     z-index: 1;
 }
 .slick-next {
-    right: 2;
+    right: 1%;
     z-index: 1;
 }
 /* id slide ここまで */
@@ -336,8 +336,6 @@ rt {
     justify-content: space-between;
 }
 /* site */
-#site {
-}
 .site {
     padding: 30px;
     display: grid;
