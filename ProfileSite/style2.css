@@ -93,8 +93,10 @@ header {
     top: 0;
     right: 0;
     left: 0;
+    /* text-align: center; */
     background-color: black;
     opacity: 0.5;
+    /* width: 100%; */
     height: 100vh;
     line-height: 2rem;
 }
@@ -156,6 +158,7 @@ header {
 .wrapper {
     width: 900px;
     margin: 50px auto;
+    /* margin: 0 auto; */
 }
 .wrapper-g {
     background-color: darkgrey;
@@ -163,11 +166,14 @@ header {
 main {
     padding-top: 60px;
 }
+/* section(main) */
+/* id slide */
 #slide {
     margin: 50px auto;
 }
 #slide div {
     width: 100%;
+    /* width: 90%; */
     height: 70vh;
     margin: auto;
 }
@@ -259,17 +265,12 @@ rt {
 
 /* フェードインの動きをつける */
 .fadein-before {
-    /* 透過度の設定。０で表示されなくなる */
     opacity: 0;
-    /* 要素をひだりに100pxずらして配置させる */
     transform: translateX(-100px);
-    /* 透過度と表示位置を1秒かけて変化させる */
     transition: opacity 1s, transform 1s;
 }
 .fadein-after {
-    /* 透過度の設定。非表示から表示にする */
     opacity: 1;
-    /* 要素を100px左にしてたものを戻す */
     transform: translate(0);
 }
 
@@ -453,7 +454,34 @@ footer button {
     /* footer */
     .footitle {
         visibility: initial;
+        padding-bottom: 100px;
     }
+    .footerNav {
+        display: none;
+    }
+    .footerMenu {
+        visibility: initial;
+        background-color: darkgrey;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        z-index: 999;
+    }
+    .footitle h1 {
+    width: 150px;
+    text-align: center;
+    color: darkgrey;
+    background-color: white;
+    margin-left: 10px;
+    }
+    .footerMenu img {
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        filter: invert(100%);
+    }
+
 }
 
 /* 768px以下で下記のcss適応 */
@@ -529,34 +557,10 @@ footer button {
         padding-left: 10px;
         padding-right: 10px;
     }
-    .footerNav {
-        display: none;
-
-    .footitle{
-        padding-bottom: 100px;
-    }
-    .footitle h1 {
-    width: 150px;
-    text-align: center;
-    color: darkgrey;
-    background-color: white;
-    margin-left: 10px;
-    }
-
-    .footerMenu {
-        visibility: initial;
-        background-color: darkgrey;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        height: 80px;
-        z-index: 999;
-    }
     .footerMenu img {
         padding-top: 10px;
         padding-left: 5px;
         padding-right: 5px;
         filter: invert(100%);
     }
-}
 }
